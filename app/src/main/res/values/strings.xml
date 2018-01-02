@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">BakingApp</string>
+    <string name="appwidget_text">Baking App</string>
+
+    <!-- Fragment_Detail.xml-->
+    <!-- Content Descriptions-->
+    <string name="no_video_img_cd">img which appears when video is absent</string>
+    <string name="detail_thumbnail_cd">if no video but yes img show this img</string>
+
+    <string name="instructions_text">Instructions:</string>
+
+    <string name="steps">Steps:</string>
+    <!-- Recipe_List_Item.xml-->
+    <string name="recipe_thumbNail_cd">recipe thumbnail image</string>
+</resources>

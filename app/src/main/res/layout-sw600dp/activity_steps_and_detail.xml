@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context="com.example.tin.bakingapp.Activities.StepsAndIngredientsActivity">
+
+    <!--FrameLayout to hold fragment_step-->
+    <FrameLayout
+        android:id="@+id/steps_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:scaleType="centerInside" />
+
+    <View
+        android:layout_width="5dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0"
+        android:background="@color/black" />
+
+    <FrameLayout
+        android:id="@+id/detail_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:scaleType="centerInside" />
+
+</LinearLayout>
