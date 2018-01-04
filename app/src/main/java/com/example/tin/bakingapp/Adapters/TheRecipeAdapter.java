@@ -5,10 +5,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tin.bakingapp.Models.TheRecipe;
 import com.example.tin.bakingapp.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -60,12 +62,18 @@ public class TheRecipeAdapter extends RecyclerView.Adapter<TheRecipeAdapter.View
 
         viewHolder.tvRecipeName.setText(theRecipe.getName());
 
+        // if theRecipe.getImage is empty, use the pie image from the @Drawable, else us the image in the json
+        if (theRecipe.getImage().isEmpty()) {
+
+            Picasso.with(context).load(R.drawable.pie).into(viewHolder.ivRecipeImage);
+
+        } else {
+
+            Picasso.with(context).load(theRecipe.getImage()).into(viewHolder.ivRecipeImage);
+
+        }
+
     }
-//
-//    @Override
-//    public int getItemCount() {
-//        return recipes.size();
-//    }
 
     @Override
     public int getItemCount() {
@@ -80,7 +88,7 @@ public class TheRecipeAdapter extends RecyclerView.Adapter<TheRecipeAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        //ImageView ivRecipeImage;
+        ImageView ivRecipeImage;
         final TextView tvRecipeName;
 
         @Override
@@ -94,7 +102,7 @@ public class TheRecipeAdapter extends RecyclerView.Adapter<TheRecipeAdapter.View
         public ViewHolder(View itemView) {
             super(itemView);
 
-            //ivRecipeImage = itemView.findViewById(R.id.recipe_thumbNail);
+            ivRecipeImage = itemView.findViewById(R.id.recipe_thumbNail);
             tvRecipeName = itemView.findViewById(R.id.recipe_title);
             // This code tells the clickListener to listen for click on this ViewHolder
             itemView.setOnClickListener(this);
